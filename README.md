@@ -43,7 +43,7 @@ The application features a clean, modern design with a purple gradient backgroun
 
 1. **Clone the repository**
    ```bash
-   git clone <your-repository-url>
+   git clone https://github.com/rahul-a-22/IP_Adress_Finder.git
    cd IP_Adress_Finder
    ```
 
