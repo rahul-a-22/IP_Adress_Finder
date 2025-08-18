@@ -21,11 +21,11 @@ A modern, responsive web application that allows users to search for IP addresse
 The application features a clean, modern design with a purple gradient background. Users can enter any IP address in the search bar and get comprehensive information displayed in two main panels:
 
 **Left Panel - IP Address Details:**
-- Prominent display of the IP address (e.g., "152.57.33.216")
-- Approximate location (e.g., "Bengaluru, Karnataka, India")
-- Internet Service Provider (e.g., "Reliance Jio Infocomm Limited")
-- Timezone information (e.g., "Asia/Kolkata")
-- Local currency (e.g., "INR")
+- Prominent display of the IP address (e.g., "8.8.8.8")
+- Approximate location (e.g., "Mountain View, California, United States.")
+- Internet Service Provider (e.g., "GOOGLE")
+- Timezone information (e.g., "America/Los_Angeles")
+- Local currency (e.g., "USD")
 
 **Right Panel - Interactive Map:**
 - Detailed map view powered by Mapbox
