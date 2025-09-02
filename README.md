@@ -148,9 +148,6 @@ The application is fully responsive and works seamlessly on:
 
 Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🙏 Acknowledgments
 
