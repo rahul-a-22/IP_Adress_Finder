@@ -4,27 +4,37 @@ A full-stack application for looking up IP address information with a React fron
 
 ## Features
 
-- **Backend Proxy with API Key Protection**: Express.js backend that securely handles API calls
-- **Rate Limiting & Caching**: Prevents excessive API calls and improves performance
+### Frontend
+- **Interactive Map**: Visualize IP locations on a Mapbox map
 - **Saved Searches**: Save and manage your favorite IP lookups
 - **Input Validation**: Validates IPv4 and IPv6 formats
 - **Error Handling**: Comprehensive error handling with user-friendly messages
-- **Interactive Map**: Visualize IP locations on a map
 - **Unit Tests**: Comprehensive test suite for components and services
+
+### Backend
+- **Express.js Proxy**: Securely handles API calls to external IP services
+- **API Key Protection**: Protects API keys using environment variables
+- **Rate Limiting**: Prevents abuse (100 requests per 15-minute window per IP)
+- **Response Caching**: Improves performance by caching responses for 1 hour
+- **Multiple Providers**: Supports both ipapi.co and ipinfo.io for IP lookups
 
 ## Project Structure
 
 ```
-├── client/            # React frontend
-│   ├── src/
-│   │   ├── components/  # React components
-│   │   ├── test/        # Unit tests
-│   │   └── App.jsx      # Main application component
-│   └── package.json
+├── src/               # React frontend
+│   ├── components/      # React components
+│   ├── test/            # Unit tests
+│   ├── assets/          # Static assets
+│   └── App.jsx          # Main application component
 │
-└── server/            # Express backend
-    ├── index.js         # Server entry point
-    └── package.json
+├── server/            # Express backend
+│   ├── index.js         # Server entry point
+│   └── package.json     # Backend dependencies
+│
+├── .env.example       # Example environment variables
+├── package.json       # Frontend dependencies
+├── vite.config.js     # Vite configuration
+└── vitest.config.js   # Vitest configuration
 ```
 
 ## Setup & Installation
@@ -105,9 +115,38 @@ Looks up IP information using ipapi.co.
 - If `:ip` is provided, it looks up that specific IP address
 - If `:ip` is omitted, it looks up the client's IP address
 
+Example response:
+```json
+{
+  "ip": "8.8.8.8",
+  "city": "Mountain View",
+  "region": "California",
+  "country_name": "United States",
+  "latitude": 37.4056,
+  "longitude": -122.0775,
+  "org": "Google LLC",
+  "timezone": "America/Los_Angeles"
+}
+```
+
 ### GET `/api/lookup-alt/:ip?`
 
 Alternative IP lookup using ipinfo.io.
+
+- If `:ip` is provided, it looks up that specific IP address
+- If `:ip` is omitted, it looks up the client's IP address
+
+### POST `/api/clear-cache`
+
+Clears the server's IP lookup cache. For testing/admin purposes.
+
+## Caching and Rate Limiting
+
+### Caching
+Responses are cached for 1 hour by default. This can be configured in the `.env` file by changing the `CACHE_DURATION` value (in milliseconds).
+
+### Rate Limiting
+Requests are limited to 100 per 15-minute window per IP address to prevent abuse.
 
 ## Technologies Used
 

@@ -1,3 +1,7 @@
+# DEPRECATED
+
+**Note:** This README is deprecated. Please refer to the main README.md file in the project root for up-to-date documentation.
+
 # IP Address Finder - Backend Server
 
 This is the backend server for the IP Address Finder application. It provides a caching proxy for IP geolocation APIs to protect API keys and implement rate limiting.
