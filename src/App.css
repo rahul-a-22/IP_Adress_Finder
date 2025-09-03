@@ -1,4 +1,4 @@
-/* App.js */
+/* App Styles */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 * {
@@ -136,6 +136,11 @@ body {
     transform: translateY(-2px);
 }
 
+.search-input.input-error {
+    border-color: #ff6b6b;
+    background-color: rgba(255, 107, 107, 0.05);
+}
+
 .search-button {
     padding: 15px 30px;
     font-size: 16px;
@@ -175,6 +180,125 @@ body {
     padding: 10px 20px;
     border-radius: 10px;
     border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+/* Saved Searches Styles */
+.saved-searches {
+    margin: 0 auto 30px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 800px;
+    width: 100%;
+}
+
+.saved-searches h3 {
+    color: white;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.saved-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.saved-item {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.saved-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.saved-item strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #667eea;
+    font-size: 18px;
+}
+
+.saved-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.saved-item small {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.saved-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-search-again, .btn-remove, .save-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-search-again {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-search-again:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-remove {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+
+.btn-remove:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+}
+
+.save-button {
+    background: linear-gradient(45deg, #4caf50, #8bc34a);
+    color: white;
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+}
+
+.save-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
 }
 
 /* IP Details Styling */

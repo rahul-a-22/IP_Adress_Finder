@@ -1,4 +1,121 @@
-# 🌐 IP Address Finder
+# IP Address Finder
+
+A full-stack application for looking up IP address information with a React frontend and Express backend. The application displays geographical information about IP addresses on an interactive map.
+
+## Features
+
+- **Backend Proxy with API Key Protection**: Express.js backend that securely handles API calls
+- **Rate Limiting & Caching**: Prevents excessive API calls and improves performance
+- **Saved Searches**: Save and manage your favorite IP lookups
+- **Input Validation**: Validates IPv4 and IPv6 formats
+- **Error Handling**: Comprehensive error handling with user-friendly messages
+- **Interactive Map**: Visualize IP locations on a map
+- **Unit Tests**: Comprehensive test suite for components and services
+
+## Project Structure
+
+```
+├── client/            # React frontend
+│   ├── src/
+│   │   ├── components/  # React components
+│   │   ├── test/        # Unit tests
+│   │   └── App.jsx      # Main application component
+│   └── package.json
+│
+└── server/            # Express backend
+    ├── index.js         # Server entry point
+    └── package.json
+```
+
+## Setup & Installation
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Backend Setup
+
+1. Navigate to the server directory:
+   ```
+   cd server
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Create a `.env` file based on `.env.example` and add your API keys:
+   ```
+   IPAPI_KEY=your_ipapi_key_here
+   IPINFO_TOKEN=your_ipinfo_token_here
+   ```
+
+4. Start the server:
+   ```
+   npm run dev
+   ```
+   The server will run on http://localhost:3001
+
+### Frontend Setup
+
+1. From the project root, install dependencies:
+   ```
+   npm install
+   ```
+
+2. Create a `.env` file based on `.env.example` and add your Mapbox API key:
+   ```
+   VITE_MAPBOX_API_KEY=your_mapbox_api_key_here
+   ```
+
+3. Start the development server:
+   ```
+   npm run dev
+   ```
+   The application will be available at http://localhost:5173
+
+## Running Tests
+
+Run the test suite with:
+
+```
+npm test
+```
+
+For watch mode during development:
+
+```
+npm run test:watch
+```
+
+For test coverage report:
+
+```
+npm run test:coverage
+```
+
+## API Endpoints
+
+### GET `/api/lookup/:ip?`
+
+Looks up IP information using ipapi.co.
+
+- If `:ip` is provided, it looks up that specific IP address
+- If `:ip` is omitted, it looks up the client's IP address
+
+### GET `/api/lookup-alt/:ip?`
+
+Alternative IP lookup using ipinfo.io.
+
+## Technologies Used
+
+- **Frontend**: React, Axios, Mapbox GL
+- **Backend**: Node.js, Express
+- **Testing**: Vitest, React Testing Library
+- **Caching**: Node-Cache
+- **Styling**: CSS with responsive design
 
 A modern, responsive web application that allows users to search for IP addresses and view detailed information including geographical location, ISP details, timezone, and currency. The app features an interactive map display powered by Mapbox to visualize the location of any IP address.
 
