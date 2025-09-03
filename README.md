@@ -170,8 +170,8 @@ A modern, responsive web application that allows users to search for IP addresse
 - **Auto-detection**: Automatically detects and displays your current IP address on page load
 
 ## 🖼️ Screenshots
-<img src="./src/assets/screenshoot1.png">
-<img src="./src/assets/screenshoot2.png">
+<img src="./src/assets/screenshot1.png">
+<img src="./src/assets/screenshot2.png">
 
 ### Main Interface
 The application features a clean, modern design with a purple gradient background. Users can enter any IP address in the search bar and get comprehensive information displayed in two main panels:
